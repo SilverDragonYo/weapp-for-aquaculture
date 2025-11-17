@@ -1,0 +1,25 @@
+<!--pages/aquacultureConfig/aquacultureConfig.wxml-->
+<page-meta page-style="overflow: hidden;"></page-meta>
+<navigation-bar title="配置项" color="black"></navigation-bar>
+
+<van-popup show="{{ isShowPopup }}" custom-class="popup-class" bind:close="closePopup" custom-style="background-color: rgb(105, 105, 105, 0.8);" overlay-style="background-color: transparent;">
+  <image src="{{currentPopup.imgPath}}" mode="aspectFit" style="width: 150px;"></image>
+  <text>{{currentPopup.text}}</text>
+</van-popup>
+<view class="body">
+  <view class="content">
+    <view class="normal-card">
+      <view wx:for="{{deviceInfo}}" wx:key="index">
+        <van-field value="{{ item.value }}" label="{{item.label}}" placeholder="{{item.placeholder}}" border="{{ true }}" data-key="{{item.name}}" bind:change="onDataInput"  custom-style='width: 90vw; margin-bottom:10px;'/>
+      </view>
+
+      <view style="display: flex;">
+        <view wx:for="{{button}}" wx:key="index">
+          <van-button size="normal" type="{{item.type}}" custom-style="margin-top: 12px;margin: 8px;width: 150px;border-radius: 8px;font-size: 15px;"bind:click="onButtonPressed" data-name="{{item.name}}">{{item.text}}</van-button>
+        </view>
+      </view>
+
+    </view>
+    <text class="name-text">Designed by ElectroDragon</text>
+  </view>
+</view>

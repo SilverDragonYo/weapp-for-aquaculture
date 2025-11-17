@@ -1,0 +1,10 @@
+<!--pages/introPage/aquacultrueIntro.wxml-->
+<navigation-bar title="项目介绍及使用说明" color="black"></navigation-bar>
+<scroll-view scroll-y="true" class="body" style="height: {{bodyHeight}}px;">
+  <view class="content">
+    <view class="normal-card">
+      <rich-text style="font-weight:normal;font-size: 14px;line-height: 31px;" nodes="{{intro}}"></rich-text>
+    </view>
+    <text style="font-size: 12px;text-align: center;margin: auto;color: #00000010;">Designed by ElectroDragon</text>
+  </view>
+</scroll-view>

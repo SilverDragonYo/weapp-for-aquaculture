@@ -1,0 +1,42 @@
+<!--pages/aquaculture/aquaculture.wxml-->
+<page-meta page-style="{{ enableScroll ? 'overflow: visible;' : 'overflow:hidden;' }}">
+  <navigation-bar title="水产养殖小程序" color="black" background-color="#dddddd"></navigation-bar>
+</page-meta>
+
+<van-popup show="{{ isShowPopup }}" closeable="{{true}}"  position="bottom" custom-class="popup-class" bind:close="closePopup" custom-style="border-radius: 8px;height: 35vh;display: flex;flex-direction: column;align-items: center;text-align: center;">
+  <image src="{{currentPopup.imgPath}}" mode="widthFix" style="width: 180px;margin: 20px;"></image>
+  <text style="font-size: 20px; font-weight: bolder; color: rgb(255, 88, 88);">{{currentPopup.text}}</text>
+</van-popup>
+
+<scroll-view scroll-y="{{enableScroll}}" class="body" style="height: {{bodyHeight}}px;">
+  <view class="content">
+    <view wx:for="{{deviceState}}" wx:key="name" class="normal-card">{{item.text}} 
+      <text style="color: {{item.color}}; font-weight: bolder;text-align: left; margin-right: 6vw;" >{{item.state}}</text>
+      <van-button plain size="small" class='van-button' color="#66CDAA" custom-style="border-radius: 8px;font-size:14px;" bind:click="onButtonPressed" data-name="{{item.name}}">{{item.buttonText}}</van-button>
+    </view>
+
+    <view class="sensorData-card-outer">
+      <text class="sensorData-card-title">传感器实时数据</text>
+      <view class="sensorData-card-container">
+        <view class="sensorData-card" wx:for="{{sensorData}}" wx:key="name">
+          <view class="card-text">{{item.name}}</view>
+          <view class="card-data">{{item.value}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="chart-card">
+      <van-dropdown-menu active-color="#8cc4ff" class="dropdown-menu">
+        <van-dropdown-item custom-class="my-dropdown-item" value="{{dropDownMenuInitialValue}}" options="{{dropDownItemOption}}" bind:open="openDropdown" bind:close="closeDropdown" bind:change="onOptionChange" />
+      </van-dropdown-menu>
+
+      <view class="echarts">
+        <ec-canvas type="2d" id="myChart" disable-scroll="true" canvas-id="myChart" ec="{{ec1}}" force-use-old-canvas="true"></ec-canvas>
+      </view>
+    </view>
+    <view wx:for="{{otherPages}}" wx:key="name" class="normal-card" hover-class="normal-card-pressed" hover-stop-propagation="true" bind:tap="toOtherPages" data-target="{{item.target}}">
+      <text class="introAndSetting-text">{{item.name}}</text>
+    </view>
+    <text style="font-size: 10px;text-align: center;margin: auto;color: #00000010;">Designed by ElectroDragon</text>
+  </view>
+</scroll-view>
