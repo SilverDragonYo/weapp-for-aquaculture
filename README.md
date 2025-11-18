@@ -79,7 +79,7 @@ This Mini Program was created form scratch in two months. It still has imperfect
 
      The chart will not follow its parent element's movement if the attribute `force-use-old-canvas="true"` is enabled.
 
-     **Solution: **Remove this attribute (located at `line 34`, `pages/aquaculture/aquaculture.wxml`) to solve the issue.
+     **Solution: ** Remove this attribute (located at `line 34`, `pages/aquaculture/aquaculture.wxml`) to solve the issue.
 
      ```html
      <!-- Remove force-use-old-canvas="true" -->
