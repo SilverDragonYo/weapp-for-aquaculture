@@ -34,21 +34,21 @@ This Mini Program was created form scratch in two months. It still has imperfect
 
 ## Install & Build
 
-1. Clone the repository or download the code
+1. Clone the repository or download the code.
 
-2. Install the dependencies
+2. Install the dependencies.
 
    ```
    npm install
    ```
 
-3. Import the project in WeChat Developer Tools
+3. Import the project in WeChat Developer Tools.
 
-4. Build NPM and compile the project
+4. Build NPM and compile the project.
 
 5. Log in to the [WeChat Mini Program Console](https://mp.weixin.qq.com/), 
 
-   1. Navigate to Development > Development Management
+   1. Navigate to Development > Development Management.
    2. Add following Domains:
 
    ```
