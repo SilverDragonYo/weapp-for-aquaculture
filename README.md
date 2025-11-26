@@ -15,11 +15,10 @@ This Mini Program was created form scratch in two months. It still has imperfect
   <img src="docs/image/introduction_page.png" width="200">
 </div>
 
-
-
 ## Features
 
 - Real-time monitoring of PH / DO (Dissolved Oxygen) / Water Temperature
+- Static assets and images are served via Cloudflare R2 CDN
 - Elegant prompt design (Keqing in Genshin Impact) 
 - Remote control of oxygenation devices
 - MQTT-based device communication
